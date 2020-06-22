@@ -1,0 +1,11 @@
+<cdk-virtual-scroll-viewport itemSize="50" class="example-viewport">
+  <mat-card *cdkVirtualFor="let item of items">
+    <mat-card-title>Question {{item}}</mat-card-title>
+    <mat-card-subtitle>
+        What is the name of your school's gateman if any?
+    </mat-card-subtitle>
+    <mat-card-actions align="end">
+        <button mat-raised-button color="primary">Primary</button>
+    </mat-card-actions>
+    </mat-card>
+</cdk-virtual-scroll-viewport>
