@@ -46,3 +46,7 @@ and (max-device-width: 960px) {
   #questions label {
     font-size: large;
   }
+
+  #questions mat-card mat-card-actions {
+    margin: auto;
+  }
