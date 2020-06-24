@@ -23,7 +23,7 @@ import { CdkStepperModule } from '@angular/cdk/stepper'; // https://material.ang
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDividerModule } from '@angular/material/divider';
 import { ScrollingModule } from '@angular/cdk/scrolling';
-
+import { MatChipsModule } from '@angular/material/chips';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,6 +31,7 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
     AddQuestionsComponent
   ],
   imports: [
+    MatChipsModule,
     MatDividerModule,
     CdkStepperModule,
     MatCheckboxModule,

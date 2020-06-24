@@ -5,84 +5,112 @@
   
 <p>Most of the time, I try to work but don't do as much as I want.</p>
 
-<!-- <mat-card>
-    <mat-card-title>Question 032</mat-card-title>
-    <mat-card-subtitle>
-        What is the name of your school's gateman if any?
-    </mat-card-subtitle>
-    <mat-card-content>
-        <div>
-            <label>Float label: </label>
-            <mat-radio-group [formControl]="floatLabelControl">
-              <mat-radio-button value="auto">Auto</mat-radio-button>
-              <mat-radio-button value="always">Always</mat-radio-button>
-            </mat-radio-group>
-          </div>
-    </mat-card-content>
-    <mat-card-actions align="end">
-        <button mat-raised-button color="primary"><mat-icon aria-hidden="false" aria-label="Example home icon">flag</mat-icon> Flag</button>
-    </mat-card-actions>
-    </mat-card>
-
-    <mat-card>
-        <mat-card-title>Question 052</mat-card-title>
-        <mat-card-subtitle>
-            What is the name of your school's gateman if any?
-        </mat-card-subtitle>
-        <mat-card-content>
-            <mat-checkbox [formControl]="hideRequiredControl">Hide required marker</mat-checkbox>
-        </mat-card-content>
-        <mat-card-actions align="end">
-            <button mat-raised-button color="primary"><mat-icon aria-hidden="false" aria-label="Example home icon">flag</mat-icon> Flag</button>
-        </mat-card-actions>
-        </mat-card>
-
-        <mat-card>
-    <mat-card-title>Question 098</mat-card-title>
-    <mat-card-subtitle>
-        What is the name of your school's gateman if any?
-    </mat-card-subtitle>
-    <mat-card-content>
-        <p>
-            This is a paragragph, and you should
-            <mat-form-field appearance="legacy">
-              <mat-label></mat-label>
-              <input matInput placeholder="*****">
-              <mat-hint>Fill in the blank</mat-hint>
-            </mat-form-field>
-            in the
-            <mat-form-field appearance="legacy">
-                <mat-label></mat-label>
-                <input matInput placeholder="***">
-                <mat-hint>Fill in the blank</mat-hint>
-              </mat-form-field>
-          </p>
-    </mat-card-content>
-    <mat-card-actions align="end">
-        <button mat-raised-button color="primary"><mat-icon aria-hidden="false" aria-label="Flag icon. Click to flag this question">flag</mat-icon> Flag</button>
-    </mat-card-actions>
-    </mat-card>
+<!-- 
  -->
     <mat-divider></mat-divider>
 
-<section>
-    <cdk-virtual-scroll-viewport itemSize="50" class="center">
-        <div *cdkVirtualFor="let item of items">
-          <mat-card >
-              <mat-card-title>Question {{item}}</mat-card-title>
-              <mat-card-subtitle>
-                  What is the name of your school's gateman if any?
-              </mat-card-subtitle>
-              <mat-card-actions align="end">
-                  <button mat-raised-button color="primary"><mat-icon aria-hidden="false" aria-label="Flag icon. Click to flag this question">flag</mat-icon> Flag</button>
-              </mat-card-actions>
-              </mat-card>
-        </div>
-      </cdk-virtual-scroll-viewport>
-</section>
+<div id="parent" class="center">
+    <section>
+        <form>
+            <div id="questions">
+                <mat-card>
+                    <mat-card-title>Question 32</mat-card-title>
+                    <mat-card-content>
+                        <div>
+                            <label>What is the name of your school's gateman if any? </label>
+                            <mat-radio-group 
+                            [formControl]="floatLabelControl"
+                            class="a-radio-group"
+                            >
+                              <mat-radio-button class="a-radio-group-button" value="auto">Auto</mat-radio-button>
+                              <mat-radio-button class="a-radio-group-button" value="always">Always</mat-radio-button>
+                            </mat-radio-group>
+                          </div>
+                    </mat-card-content>
+                    <mat-card-actions align="end">
+                        <button mat-raised-button color="primary"><mat-icon aria-hidden="false" aria-label="Example home icon">flag</mat-icon> Flag</button>
+                    </mat-card-actions>
+                    </mat-card>
+                
+                    <mat-card>
+                        <mat-card-title>Question 52</mat-card-title>
+                        <mat-card-content>
+                            <div>
+                                <label>What is the name of your school's gateman if any? </label>
+                                
+                                <div class="a-checkbox-group">
+                                    <mat-checkbox class="a-checkbox-group-button" [formControl]="hideRequiredControl">Hide required marker</mat-checkbox>
+                                    <mat-checkbox class="a-checkbox-group-button" [formControl]="hideRequiredControl">Hide required marker</mat-checkbox>
+                                    <mat-checkbox class="a-checkbox-group-button" [formControl]="hideRequiredControl">Hide required marker</mat-checkbox>
+                                    <mat-checkbox class="a-checkbox-group-button" [formControl]="hideRequiredControl">Hide required marker</mat-checkbox>
+                                </div>
+                              </div>
+                            
+                        </mat-card-content>
+                        <mat-card-actions align="end">
+                            <button mat-raised-button color="primary"><mat-icon aria-hidden="false" aria-label="Example home icon">flag</mat-icon> Flag</button>
+                        </mat-card-actions>
+                        </mat-card>
+                
+                        <mat-card>
+                    <mat-card-title>Question 98</mat-card-title>
+                    <mat-card-subtitle>
+                        What is the name of your school's gateman if any?
+                    </mat-card-subtitle>
+                    <mat-card-content>
+                        <p>
+                            This is a paragragph, and you should
+                            <mat-form-field appearance="legacy">
+                              <mat-label></mat-label>
+                              <input matInput placeholder="*****">
+                              <mat-hint>Fill in the blank</mat-hint>
+                            </mat-form-field>
+                            in the
+                            <mat-form-field appearance="legacy">
+                                <mat-label></mat-label>
+                                <input matInput placeholder="***">
+                                <mat-hint>Fill in the blank</mat-hint>
+                              </mat-form-field>
+                          </p>
+                    </mat-card-content>
+                    <mat-card-actions align="end">
+                        <button mat-raised-button color="primary"><mat-icon aria-hidden="false" aria-label="Flag icon. Click to flag this question">flag</mat-icon> Flag</button>
+                    </mat-card-actions>
+                    </mat-card>
 
-<section>
-    <mat-card>
-        
-    </mat-card>
-</section>
+              <mat-card *ngFor="let item of items">
+                  <mat-card-title>Question {{item}}</mat-card-title>
+                  <mat-card-subtitle>
+                      What is the name of your school's gateman if any?
+                  </mat-card-subtitle>
+                  <mat-card-actions align="end">
+                      <button mat-raised-button color="primary"><mat-icon aria-hidden="false" aria-label="Flag icon. Click to flag this question">flag</mat-icon> Flag</button>
+                  </mat-card-actions>
+                  </mat-card>
+            </div>
+        </form>
+
+            
+          
+    </section>
+    
+    <section>
+        <mat-card>
+            <mat-card-title>
+                Questions Pallete
+            </mat-card-title>
+            <mat-card-subtitle>
+                Some stats. like answered questions, flaged questions, etc.
+            </mat-card-subtitle>
+            <mat-card-content>
+                <mat-chip-list aria-label="Fish selection">
+                    <mat-chip>One fish</mat-chip>
+                    <mat-chip>Two fish</mat-chip>
+                    <mat-chip color="primary" selected>Primary fish</mat-chip>
+                    <mat-chip color="accent" selected>Accent fish</mat-chip>
+                  </mat-chip-list>
+            </mat-card-content>
+        </mat-card>
+    </section>
+
+</div>

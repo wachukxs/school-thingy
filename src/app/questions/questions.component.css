@@ -1,34 +1,24 @@
-cdk-virtual-scroll-viewport {
-    height: calc(100vh - (64px + 64px));
-  
-    width: 100%;
-  
-    background-color: #EEF2F7;
-  }
+div#parent {
+  display: flex;
+  align-items: flex-start;
+}
+
+#parent section {
+  padding: 30px;
+}
+
   @media only screen and (max-device-width: 960px) {
-    cdk-virtual-scroll-viewport {
-      height: calc(100vh - (56px + 56px));
-    }
+   
   }
 
   /**very large mobile (tablets) view rules*/
 @media only screen 
 and (min-device-width: 769px) 
 and (max-device-width: 960px) { 
-  mat-sidenav {
-      width: 30%;
-  }
-
-  div.cdk-virtual-scroll-content-wrapper {
-    position: inherit; /**not working*/
-  }
-
-  mat-card {
-    width: 70%;
-  }
+  
 }
 
-:host() ::ng-deep cdk-virtual-scroll-viewport .cdk-virtual-scroll-content-wrapper { /** https://stackoverflow.com/a/59205966 */
+:host() ::ng-deep  { /** https://stackoverflow.com/a/59205966 */
     width: -moz-available !important;
     width: -webkit-fill-available !important;
   }
@@ -38,4 +28,21 @@ and (max-device-width: 960px) {
     display: block;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .a-radio-group, .a-checkbox-group {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0;
+  }
+
+  .a-radio-group-button, .a-checkbox-group-button {
+    margin: 5px;
+  }
+
+  #questions > mat-card {
+    margin-bottom: 20px;
+  }
+  #questions label {
+    font-size: large;
   }
