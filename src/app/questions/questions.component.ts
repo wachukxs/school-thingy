@@ -12,8 +12,8 @@ export class QuestionsComponent implements OnInit {
   constructor() { }
 
   items = Array.from({length: 50}).map((_, i) => `${i}`);
-  hideRequiredControl = new FormControl(false);
-  floatLabelControl = new FormControl('auto');
+  hideRequiredControl = new FormControl(); // radio-group, can initialize with default value e.g. new FormControl(false);
+  floatLabelControl = new FormControl(); // checkbox-group, can initialize with default value e.g. new FormControl('auto');
 
   ngOnInit(): void {
   }
