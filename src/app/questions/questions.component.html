@@ -13,80 +13,49 @@
     <section>
         <form>
             <div id="questions">
-                <mat-card>
-                    <mat-card-title>Question 32</mat-card-title>
-                    <mat-card-content>
-                        <div>
-                            <label>What is the name of your school's gateman if any? </label>
+                  <mat-card *ngFor="let question of questions;  index as i">
+                    <mat-card-title>Question {{i + 1}}</mat-card-title>
+                    <mat-card-content [ngSwitch]="question.type">
+                        <div *ngSwitchCase="'multiple-choice'">
+                            <label>{{question.question}}</label>
+                            
+                            <div class="a-checkbox-group">
+                                <mat-checkbox *ngFor="let answer of question.answers; index as i" class="a-checkbox-group-button" [formControl]="hideRequiredControl">{{answer}}</mat-checkbox>
+                                
+                            </div>
+                        </div>
+
+                        <div *ngSwitchCase="'single-choice'">
+                            <label>{{question.question}}</label>
+                            
                             <mat-radio-group 
                             [formControl]="floatLabelControl"
                             class="a-radio-group"
                             >
-                              <mat-radio-button class="a-radio-group-button" value="auto">Auto</mat-radio-button>
-                              <mat-radio-button class="a-radio-group-button" value="always">Always</mat-radio-button>
+                              <mat-radio-button *ngFor="let answer of question.answers; index as i" class="a-radio-group-button" value="auto">{{answer}}</mat-radio-button>
                             </mat-radio-group>
-                          </div>
+                        </div>
+
+                        <div *ngSwitchCase="'fill-blanks'">
+                            <p>
+                                <span *ngFor="let question_part of question.question.split('_'); index as i; last as isLast">
+                                    {{ question_part }}
+                                    <mat-form-field appearance="legacy" *ngIf="!isLast">
+                                        <input matInput placeholder="*****">
+                                        <mat-hint>Fill in the blank</mat-hint>
+                                      </mat-form-field>
+                                </span>
+                                
+                              </p>
+                        </div>
+
+
+                        
                     </mat-card-content>
                     <mat-card-actions align="end">
                         <button mat-raised-button color="primary"><mat-icon aria-hidden="false" aria-label="Example home icon">flag</mat-icon> Flag</button>
                     </mat-card-actions>
                     </mat-card>
-                
-                    <mat-card>
-                        <mat-card-title>Question 52</mat-card-title>
-                        <mat-card-content>
-                            <div>
-                                <label>What is the name of your school's gateman if any? </label>
-                                
-                                <div class="a-checkbox-group">
-                                    <mat-checkbox class="a-checkbox-group-button" [formControl]="hideRequiredControl">Hide required marker</mat-checkbox>
-                                    <mat-checkbox class="a-checkbox-group-button" [formControl]="hideRequiredControl">Hide required marker</mat-checkbox>
-                                    <mat-checkbox class="a-checkbox-group-button" [formControl]="hideRequiredControl">Hide required marker</mat-checkbox>
-                                    <mat-checkbox class="a-checkbox-group-button" [formControl]="hideRequiredControl">Hide required marker</mat-checkbox>
-                                </div>
-                              </div>
-                            
-                        </mat-card-content>
-                        <mat-card-actions align="end">
-                            <button mat-raised-button color="primary"><mat-icon aria-hidden="false" aria-label="Example home icon">flag</mat-icon> Flag</button>
-                        </mat-card-actions>
-                        </mat-card>
-                
-                        <mat-card>
-                    <mat-card-title>Question 98</mat-card-title>
-                    <mat-card-subtitle>
-                        What is the name of your school's gateman if any?
-                    </mat-card-subtitle>
-                    <mat-card-content>
-                        <p>
-                            This is a paragragph, and you should
-                            <mat-form-field appearance="legacy">
-                              <mat-label></mat-label>
-                              <input matInput placeholder="*****">
-                              <mat-hint>Fill in the blank</mat-hint>
-                            </mat-form-field>
-                            in the
-                            <mat-form-field appearance="legacy">
-                                <mat-label></mat-label>
-                                <input matInput placeholder="***">
-                                <mat-hint>Fill in the blank</mat-hint>
-                              </mat-form-field>
-                          </p>
-                    </mat-card-content>
-                    <mat-card-actions align="end">
-                        <button mat-raised-button color="primary"><mat-icon aria-hidden="false" aria-label="Flag icon. Click to flag this question">flag</mat-icon> Flag</button>
-                    </mat-card-actions>
-                    </mat-card>
-
-              <mat-card *ngFor="let item of items">
-                  <mat-card-title>Question {{item}}</mat-card-title>
-                  <mat-card-subtitle>
-                      What is the name of your school's gateman if any?
-                  </mat-card-subtitle>
-                  <mat-card-actions align="end">
-                      <button mat-raised-button color="primary"><mat-icon aria-hidden="false" aria-label="Flag icon. Click to flag this question">flag</mat-icon> Flag</button>
-                  </mat-card-actions>
-                  </mat-card>
             </div>
         </form>
 
