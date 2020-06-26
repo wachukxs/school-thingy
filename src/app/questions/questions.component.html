@@ -3,9 +3,12 @@
     <cdk-step> <p>This is any content of "Step 2"</p> </cdk-step>
 </example-custom-stepper> -->
   
-<p>Most of the time, I try to work but don't do as much as I want.</p>
-
 <!-- 
+    students can review questions before submiting using the pallete
+
+    use angular's dirty and pristine thingy to know what quesiton has been touch,
+
+    randomize quetions indexes [arrangements]
  -->
     <mat-divider></mat-divider>
 
@@ -48,9 +51,7 @@
                                 
                               </p>
                         </div>
-
-
-                        
+      
                     </mat-card-content>
                     <mat-card-actions align="end">
                         <button mat-raised-button color="primary"><mat-icon aria-hidden="false" aria-label="Example home icon">flag</mat-icon> Flag</button>
@@ -71,7 +72,7 @@
             <mat-card-subtitle>
                 Some stats. like answered questions, flaged questions, etc.
             </mat-card-subtitle>
-            <mat-card-content>
+            <mat-card-content><!-- connect this to like a form, connect the question to like a form (initialize it, the form) -->
                 <mat-chip-list aria-label="Fish selection">
                     <mat-chip>One fish</mat-chip>
                     <mat-chip>Two fish</mat-chip>
